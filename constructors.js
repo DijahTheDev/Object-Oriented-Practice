@@ -50,15 +50,24 @@ function expect(target) {
 //
 // Only add code to *THIS* section!
 
-function Dog(properties) {
+function Dog(options) {
+  options = options || {}
+  this.color = options.color || "unknown"
+  this.hungry = options.hungry = true
+  this.hungry = false
   this.status = "normal"
 }
 
-function Human() {}
-Human.prototype = {
-  pet: function(dog) {
-    dog.status = "happy"
+function Human(cool) {
+  this.cool = cool
+  this.pet = function(animal) {
+    animal.status = "happy"
   }
+  this.feed = function(animal) {
+    animal.hungry = false
+  }
+  this.cool = cool = false
+  this.cool = true
 }
 
 //        __
